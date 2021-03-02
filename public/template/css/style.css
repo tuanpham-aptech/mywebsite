@@ -1,0 +1,12 @@
+h6.add_category{
+    margin-top: 10px;
+    font-weight: bold;
+    color:skyblue;
+    text-align: center;
+}
+h3.list_category{
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: red;
+    text-align: center;
+}
