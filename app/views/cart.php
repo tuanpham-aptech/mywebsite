@@ -1,12 +1,5 @@
 
-   <?php 
-   if(!empty($_GET['msg'])){
-      $msg = unserialize(urldecode($_GET['msg']));
-      foreach($msg as $key =>$value){
-         echo "<span style = 'color:blue; font-width:bold;'>$value</span>";
-      }
-   }
-   ?>
+
 <section>
          <div class="bg_in">
             <div class="content_page cart_page">
@@ -34,7 +27,14 @@
                      <h1>Giỏ hàng của bạn</h1>
                   </div>
                </div>
-            
+               <?php 
+                  if(!empty($_GET['msg'])){
+                     $msg = unserialize(urldecode($_GET['msg']));
+                     foreach($msg as $key =>$value){
+                        echo "<span style = 'color:blue; font-width:bold;'>$value</span>";
+                     }
+                  }
+                  ?>
                <div class="content_text">
                   <div class="container_table">
                      <table class="table table-hover table-condensed">
@@ -49,7 +49,7 @@
                            </tr>
                         </thead>
                         <tbody>
-                        <form action="<?php echo BASE_URL?>/ordercartuser" method="post">
+                        <form action="<?php echo BASE_URL?>/ordercartuser/dathang" method="post">
                            <?php
                            $total = 0;
                            if(isset($_SESSION['shopping_cart'])){

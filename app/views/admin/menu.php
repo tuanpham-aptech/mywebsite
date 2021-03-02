@@ -66,7 +66,6 @@
       Đơn hàng 
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="<?php echo BASE_URL?>/order/add_order">Thêm </a>
         <a class="dropdown-item" href="<?php echo BASE_URL?>/order">Liệt kê</a>
       </div>
     </li>

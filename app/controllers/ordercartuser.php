@@ -39,7 +39,7 @@ Class ordercartuser extends DController{
          $address = $_POST['address'];
          $email = $_POST['email'];
          $content = $_POST['content'];
-         $order_code = rand(0,9999).'new';
+         $order_code = rand(0,9999);
 
          date_default_timezone_set('asia/ho_chi_minh');//lg
          $date = date('d/m/Y');
@@ -49,23 +49,32 @@ Class ordercartuser extends DController{
             'order_status'=>'0',
             'order_date'=>$order_date,
             'order_code'=>$order_code
-
-        );
-        // echo"<pre>";
-        // echo $order_date;
-        // echo "</pre>";
+            );
         $result = $ordermodel->insert_order($table_order,$data_order);
 
 
-        // if(Session::get("shopping_cart") == true){
-        //    foreach(Session::get("shopping_cart" as $key =>$cat){
-        //      $data = array(
+        if(Session::get("shopping_cart") == true){
+           foreach(Session::get("shopping_cart") as $key =>$value){
+             $data = array(
+                'order_code' =>$order_code,
+                'product_id' =>$value['product_id'],
+                'product_quantity' =>$value['product_quantity'],
+                'name'=>$name,
+                'phone'=>$phone,
+                'address'=>$address,
+                'email'=>$email,
+                'content'=>$content
+             );
+             $result_order_details = $ordermodel->insert_order_detail($table_order_details,$data);
 
-        //      );
-        //    }
-        //     //  echo $name.' '.$phone.' '.$address.' '.$email.' '.$content.' '.$order_code;
+           }
+           unset($_SESSION['shopping_cart']);
 
-        // }
+        }
+        if($result_order_details == 1 ){  
+            $message['msg'] = "Đặt hàng thành công  ";
+            header('Location:'.BASE_URL."/ordercartuser?msg=".urlencode(serialize($message)));
+        }
     }
 
     public function addtocart(){
