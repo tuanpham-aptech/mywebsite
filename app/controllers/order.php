@@ -18,4 +18,7 @@ Class order extends DController{
         $this->load->view('admin/footer');
 
     }
+    public function order_detail($order_code){
+        echo $order_code;
+    }
 }

@@ -20,16 +20,6 @@
         <a class="dropdown-item" href="<?php echo BASE_URL?>/post/list_category">Liệt kê</a>
       </div>
     </li>
-    <!-- Bài viêt -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Bài viết 
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Thêm </a>
-        <a class="dropdown-item" href="#">Liệt kê</a>
-      </div>
-    </li>
     <!--Danh mục sản phẩm -->
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -56,7 +46,7 @@
         Thương hiệu
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="<?php echo BASE_URL?>/brand/add_brand">Thêm </a>
+        <a class="dropdown-item" href="<?php echo BASE_URL?>brand/add_brand">Thêm </a>
         <a class="dropdown-item" href="<?php echo BASE_URL?>/brand/list_brand">Liệt kê</a>
       </div>
     </li>

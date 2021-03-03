@@ -49,7 +49,7 @@
                            </tr>
                         </thead>
                         <tbody>
-                        <form action="<?php echo BASE_URL?>/ordercartuser/dathang" method="post">
+                        <form action="<?php echo BASE_URL?>ordercartuser" method="POST">
                            <?php
                            $total = 0;
                            if(isset($_SESSION['shopping_cart'])){
@@ -76,17 +76,14 @@
                                        <div class="floatleft"><input type="number" min="1" class="inputsoluong" name="qty" 
                                         value="<?= $value['product_quantity']?>"></div>
                                        
-                                       <div class="floatleft width50">
-                                          <!-- <button class="btn_df btn_table_td_rf_del btn-sm"> -->
-                                          <!-- <i class="fa fa-refresh"></i></button> -->
-                                       </div>
                                     </div>
                                     <div class="clear"></div>
                                  </td>
 
                                  <td data-th="Thành tiền" class="text_center"><span class="color_red font_money">  <?php echo number_format($subtotal ,0,',','.')?></span></td>
                                  <td class="actions aligncenter" data-th="">
-                                    <a onclick="return del(576,'Mắt kính cận');" class="btn_df btn_table_td_rf_del btn-sm"><i class="fa fa-trash-o"></i> <span class="display_mobile">Xóa sản phẩm</span></a>                          
+                                          <button class="btn_df btn btn-primary btn_table_td_rf_del btn-sm">
+                                          <i class="fa fa-refresh">Xóa</i></button>
                                  </td>
                               </tr>
                               <?php }

@@ -3,7 +3,6 @@
     <?php 
     foreach($brand as $key=>$value){
        echo $value['title_brand'] .'<br>'; 
-
     }
     ?>
 </p>

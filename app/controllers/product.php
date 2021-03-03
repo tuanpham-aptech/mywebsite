@@ -138,8 +138,8 @@ Class product extends DController{
     public function delete_product($id){
         $table = 'products';
         $cond = "id_product = '$id'";// condition
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $result = $categorymodel->delete_product($table,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $categorymodel = $this->load->model('categorymodel');
+        $result = $categorymodel->delete_product($table,$cond);
         if($result == 1 ){
             $message['msg'] = "Xóa danh mục thành công  ";
             header("Location:".BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
@@ -155,8 +155,8 @@ Class product extends DController{
         $this->load->view('admin/menu');
         $table_product = 'products';
         $table_category = 'categories';
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $data['category'] = $categorymodel->list_product($table_product,$table_category);// lấy dữ liệu ra lưu vào biến data 
+        $categorymodel = $this->load->model('categorymodel');
+        $data['category'] = $categorymodel->list_product($table_product,$table_category); 
         $this->load->view('admin/product/list_product',$data);// truyền dữ liệu sang view hiển thị 
         $this->load->view('admin/footer');
     }
@@ -165,9 +165,9 @@ Class product extends DController{
         $table_product = 'products';
         $table_category = 'categories';
         $cond = "id_product = '$id'";// condition
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $data['productbyid'] = $categorymodel->productbyid($table_product,$cond);// lấy dữ liệu ra lưu vào biến data 
-        $data['category'] = $categorymodel->category($table_category);// lấy dữ liệu ra lưu vào biến data 
+        $categorymodel = $this->load->model('categorymodel');
+        $data['productbyid'] = $categorymodel->productbyid($table_product,$cond);
+        $data['category'] = $categorymodel->category($table_category);
         $this->load->view('admin/header');
         $this->load->view('admin/menu');
         $this->load->view('admin/product/edit_product',$data);

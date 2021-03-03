@@ -10,7 +10,6 @@ Class category extends DController{
 
     public function list_category(){
         $this->load->view('header');
-        echo "<br>";
        $categorymodel =  $this->load->model('categorymodel');
        $table_categories = 'categories';
       $data['category'] = $categorymodel->category($table_categories);
@@ -19,13 +18,12 @@ Class category extends DController{
 
     }
 
-    public function categorybyid(){
+    public function categorybyid($id){
         $this->load->view('header');
-        echo "<br>";
        $categorymodel =  $this->load->model('categorymodel');
-       $id = 2;
+       $cond = "categories.id = '$id'";// condition
        $table_categories = 'categories';
-      $data['categorybyid'] = $categorymodel->categorybyid($table_categories,$id);
+      $data['categorybyid'] = $categorymodel->categorybyid($table_categories,$cond);
         $this->load->view('categorybyid',$data);
         $this->load->view('footer');
 
@@ -65,7 +63,6 @@ Class category extends DController{
         }else{
             echo "Cập nhật dữ liệu thất bại ";
         }
-
     }
 
     public function deletecategory(){

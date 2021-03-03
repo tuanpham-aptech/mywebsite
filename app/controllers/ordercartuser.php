@@ -46,12 +46,12 @@ Class ordercartuser extends DController{
          $hour = date('h:i:sa');
          $order_date = $date.' '.$hour;
          $data_order = array(
-            'order_status'=>'0',
+            'order_code'=>$order_code,
             'order_date'=>$order_date,
-            'order_code'=>$order_code
+            'order_status'=>'0'
             );
-        $result = $ordermodel->insert_order($table_order,$data_order);
-
+            
+            $result = $ordermodel->insert_order($table_order,$data_order);
 
         if(Session::get("shopping_cart") == true){
            foreach(Session::get("shopping_cart") as $key =>$value){
@@ -71,9 +71,12 @@ Class ordercartuser extends DController{
            unset($_SESSION['shopping_cart']);
 
         }
-        if($result_order_details == 1 ){  
+        if($result_order_details){  
             $message['msg'] = "Đặt hàng thành công  ";
             header('Location:'.BASE_URL."/ordercartuser?msg=".urlencode(serialize($message)));
+        }else{
+            $message['msg'] = "giỏ hàng của bạn đang chống";
+            header('Location:'.BASE_URL."/ordercartuser?msg=".urlencode(serialize($message))); 
         }
     }
 
