@@ -7,9 +7,6 @@
     <li class="nav-item">
       <a class="nav-link" href="<?php echo BASE_URL?>/login/dashboard">Trang chủ </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Thông tin website</a>
-    </li>
      <!-- Danh mục bài viết -->
      <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

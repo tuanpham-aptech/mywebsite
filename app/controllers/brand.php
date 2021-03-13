@@ -27,7 +27,7 @@ Class brand extends DController{
         $this->load->view('admin/footer');
     }
     public function brand_product($id){
-        $this->load->view('header');
+        
         $table_categories = 'categories';
         $table_brand = 'brand';
         $table_product = 'products';
@@ -38,12 +38,13 @@ Class brand extends DController{
         $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product($table_product);
           $data['brand_by_id'] = $brandmodel->brand_by_id($table_brand,$table_product,$id);
-
+          $this->load->view('header',$data);
+          $this->load->view('slider');
           $this->load->view('brandproduct',$data);
           $this->load->view('footer');
     }
     public function product_detail($id){
-        $this->load->view('header');
+        
         $table_categories = 'categories';
         $table_brand = 'brand';
         $table_product = 'products';
@@ -55,7 +56,8 @@ Class brand extends DController{
           $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product_detail($table_product,$id);
           $data['brand_by_id'] = $homemodel->brand_by_id($table_brand,$table_product,$id);
-
+          $this->load->view('header',$data);
+          $this->load->view('slider');
         $this->load->view('product_detail',$data);
         $this->load->view('footer');
     }
@@ -123,6 +125,7 @@ Class brand extends DController{
 
     public function notfound(){
         $this->load->view('header');
+        $this->load->view('slider');
         $this->load->view('404');
         $this->load->view('footer');
     }

@@ -35,7 +35,7 @@ if(!empty($_GET['msg'])){
             else{ echo 'đơn hàng đã xử lý';} 
           ?></td>
 
-      <td><a href="<?php echo BASE_URL?>/order/order_detail/<?php echo $value['order_code']?>">Xem đơn hàng</a></td>
+      <td><a href="<?php echo BASE_URL?>/order/order_details/<?php echo $value['order_code']?>">Xem đơn hàng</a></td>
     </tr>
     <?php 
     }

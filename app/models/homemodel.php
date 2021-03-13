@@ -18,6 +18,10 @@ Class homemodel extends DModel{
       $sql = "SELECT *FROM $table_product ";
       return $this->db->select($sql);// truyền vào bảng cần lấy dữ liệu 
    }
+   public function search($table_product,$key){
+      $sql = "SELECT *FROM $table_product WHERE $table_product.title_product LIKE '%".$key."%'";
+      return $this->db->select($sql); 
+   }
    public function category_by_id($table_categories,$table_product,$id){
       $sql = "SELECT *FROM $table_categories,$table_product WHERE $table_categories.id = $table_product.id_category_product
        AND $table_product.id_category_product = '$id'

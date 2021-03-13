@@ -46,17 +46,17 @@ Class Database extends PDO{
         return $this->exec($sql);
     }
 
-    public function affectedRows($sql,$username,$password){// hàm so sánh dữ liệu trong database và người dùng 
+    public function affectedRows($sql,$username,$password){// hàm so sánh dữ liệu đăng nhập trong database và người dùng 
         $stmt = $this->prepare($sql);
-        $stmt->execute(array($username,$password));
-        return $stmt->rowCount();// đếm 
+        $stmt->execute(array($username,$password));// so sánh vs csdl
+        return $stmt->rowCount();//trả về nếu đúng 1 
     }
 
     public function selectUser($sql,$username,$password){
         
         $stmt = $this->prepare($sql);
         $stmt->execute(array($username,$password));
-        return  $stmt->fetchAll(PDO:: FETCH_ASSOC);// trả về kết quả 
+        return  $stmt->fetchAll(PDO:: FETCH_ASSOC);// trả về dl người đăng nhập 
 
     }
 

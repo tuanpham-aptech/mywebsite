@@ -16,13 +16,18 @@ Class login extends DController{
         $this->load->view('admin/menu');
         $this->load->view('admin/dashboard');
         $this->load->view('admin/footer');
-
     }
     public function login(){
-        $this->load->view('header');
-        echo "<br>";
         Session::init();
-        if(Session::get("login")== true){// nếu đã đăng nhập chuyển hướng 
+        $table_categories = 'categories';
+        $table_brand = 'brand';
+        $table_product = 'products';
+        $homemodel =  $this->load->model('homemodel');
+          $data['category'] = $homemodel->category($table_categories);
+          $data['brand'] = $homemodel->brand($table_brand);
+          $data['product'] = $homemodel->product($table_product);
+        $this->load->view('header',$data);
+        if(Session::get("login")== true){
             header("Location:".BASE_URL."/login/dashboard");
         }
         $this->load->view('admin/login');
@@ -32,7 +37,7 @@ Class login extends DController{
     public function authentication_login(){
          $username = $_POST['username'];
          $password = md5($_POST['password']);
-         $table_admin = 'users';
+         $table_admin = 'admin';
          $loginmodel = $this->load->model('loginmodel');
 
          $count = $loginmodel->login($table_admin,$username,$password);// nếu có trong database có trả về 1 

@@ -37,6 +37,8 @@ Class product extends DController{
 
     public function list_category(){
         $this->load->view('admin/header');
+        $this->load->view('slider');
+
         $this->load->view('admin/menu');
         $table = 'categories';
         $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
@@ -185,13 +187,6 @@ Class product extends DController{
         $price = $_POST['price_product'];
         $quantity = $_POST['quantity_product'];
         $categoryid = $_POST['category_product'];
-
-        // echo "<pre>";
-        // check dữ liệu 
-        // echo $title;
-        // echo $categoryid;
-        // echo "</pre>";
-        // die;
 
         $image = $_FILES['image_product']['name'];// lấy trường name
         $tmp_image = $_FILES['image_product']['tmp_name'];// biến tạm name

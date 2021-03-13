@@ -13,7 +13,6 @@ Class ordercartuser extends DController{
 
     public function ordercartuser(){
         Session::init();
-        $this->load->view('header');
         $table_categories = 'categories';
         $table_brand = 'brand';
         $table_product = 'products';
@@ -23,14 +22,14 @@ Class ordercartuser extends DController{
           $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product($table_product);
         //$data['category_by_id'] = $homemodel->category_by_id($table_categories,$table_product,$id);
-
+        $this->load->view('header',$data);
           $this->load->view('cart',$data);
           $this->load->view('footer');
     }
 
     public function dathang(){
         Session::init();
-        $table_order = 'order';
+        $table_order = 'tbl_order';
         $table_order_details = 'order_details';
         $ordermodel = $this->load->model('ordermodel');
 
@@ -41,17 +40,16 @@ Class ordercartuser extends DController{
          $content = $_POST['content'];
          $order_code = rand(0,9999);
 
-         date_default_timezone_set('asia/ho_chi_minh');//lg
-         $date = date('d/m/Y');
-         $hour = date('h:i:sa');
-         $order_date = $date.' '.$hour;
-         $data_order = array(
-            'order_code'=>$order_code,
-            'order_date'=>$order_date,
-            'order_status'=>'0'
-            );
-            
-            $result = $ordermodel->insert_order($table_order,$data_order);
+			date_default_timezone_set('asia/ha_noi');
+			$date = date("d/m/Y");
+			$hour = date("h:i:sa");
+			$order_date = $date.$hour;
+			$data_order = array(
+				'order_status' => 0,
+				'order_code' => $order_code,
+				'order_date' => $date.' '.$hour
+			);
+			$result_order = $ordermodel->insert_order($table_order,$data_order);
 
         if(Session::get("shopping_cart") == true){
            foreach(Session::get("shopping_cart") as $key =>$value){
@@ -72,17 +70,13 @@ Class ordercartuser extends DController{
 
         }
         if($result_order_details){  
-            $message['msg'] = "Đặt hàng thành công  ";
+            $message['msg'] = "Đặt hàng thành công";
             header('Location:'.BASE_URL."/ordercartuser?msg=".urlencode(serialize($message)));
-        }else{
-            $message['msg'] = "giỏ hàng của bạn đang chống";
-            header('Location:'.BASE_URL."/ordercartuser?msg=".urlencode(serialize($message))); 
         }
     }
 
     public function addtocart(){
         Session::init();
-        //Session::destroy();
         if(isset($_SESSION['shopping_cart'])){
             $valiable = 0;
             foreach($_SESSION['shopping_cart'] as $key =>$value){
@@ -114,11 +108,51 @@ Class ordercartuser extends DController{
         header("Location:".BASE_URL.'/ordercartuser');
 
     }
-  
+    
+    public function updatecart(){
+        Session::init();
+        if(isset($_POST['delete_cart'])){
+            if(isset($_SESSION["shopping_cart"])){
+            foreach($_SESSION["shopping_cart"] as $key => $values){
+
+                if($_SESSION["shopping_cart"][$key]['product_id'] == $_POST['delete_cart']){
+                    unset($_SESSION["shopping_cart"][$key]);
+                }	
+            }
+            header('Location:'.BASE_URL.'/ordercartuser');
+            }else{
+            header('Location:'.BASE_URL);
+            }
+        }else{
+            foreach($_POST['qty'] as $key => $qty){
+                foreach($_SESSION["shopping_cart"] as $session => $values){
+                    if($values['product_id'] == $key && $qty >= 1){
+                        $_SESSION["shopping_cart"][$session]['product_quantity'] = $qty;
+                    }elseif($values['product_id'] == $key && $qty <= 0){
+                        unset($_SESSION["shopping_cart"][$session]);
+                    }
+                }
+            }
+            header('Location:'.BASE_URL.'/ordercartuser');
+            
+        }
+        
+        
+    }
     public function notfound(){
-        $this->load->view('header');
-        $this->load->view('404');
-        $this->load->view('footer');
+        $table_categories = 'categories';
+        $table_brand = 'brand';
+        $table_product = 'products';
+
+        $homemodel =  $this->load->model('homemodel');
+          $data['category'] = $homemodel->category($table_categories);
+          $data['brand'] = $homemodel->brand($table_brand);
+          $data['product'] = $homemodel->product($table_product);
+          $this->load->view('header',$data);
+          $this->load->view('slider');
+          $this->load->view('404');
+          $this->load->view('footer');
+       
     }
    
 }

@@ -1,13 +1,13 @@
 
 <div class="container container__wrapper">
   <div class="row">
-    <h2 class="list-product-title">Danh mục tiêu đề sản phẩm </h2>
+    <h2 class="list-product-title">List Product Title</h2>
     <div class="list-product-subtitle">
-      <h5>Liệt kê mô tả sản phẩm</h5>
+      <p>List Product description</p>
     </div>
     <!-- <div class="product-group"> -->
       <div class="row">
-          <?php foreach($product as $key =>$pro){?>
+          <?php foreach($search as $key =>$pro){?>
             <form action="<?php echo BASE_URL?>categoryproduct/product_detail/<?php echo $pro['id_product']?>" class="product-group-form d-flex" method ="POST">
               <input type="hidden" value="<?php echo $pro['id_product']?>" name ="product_id">
               <input type="hidden" value="<?php echo $pro['title_product']?>" name ="product_title">

@@ -1,13 +1,6 @@
 
-<section class="container-fluid">
-    <aside class="col-md-2">
-    <div class="category__product">DANH MỤC SẢN PHẨM</div>
-    <?php
-      foreach($category as $key =>$value){
-    ?>
-    <div class="category__item"><a href="<?php echo BASE_URL?>categoryproduct/category_product/<?php echo $value['id']?>"><?php echo $value['name']?></a></div>
-    <?php }?>
-    </aside>
+<section class="container">
+  <div class="row">
       <article class="col-md-8 ">          
           <?php foreach($product as $key =>$cbt){?>
             <!--Section: Block Content-->
@@ -90,7 +83,7 @@
                 <li class ="rating__item">
                   <i class="far fa-star fa-sm text-primary"></i>
                 </li>
-              </ul>
+              </ul>a
               <div class="rating__number"><span class="mr-1 rating__span "><strong><?php echo number_format($cbt['price_product'],0,',','.')?>đ</strong></span></div>
               <p class="pt-1"><?php echo $cbt['desc_product']?></p>
               <div class="table-responsive mb-2">
@@ -100,23 +93,27 @@
                       <td class="pl-0 pb-0 w-25">Số lượng</td>
                     </tr>
                     <tr>
-                      <td class="pl-0">
-                        <div class="def-number-input number-input safari_only mb-0">
-                          <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                            class="minus"></button>
-                          <input class="quantity" min="0" name="quantity" value="1" type="number">
-                          <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                            class="plus"></button>
-                        </div>
+                      <td>
+                        <button  type="button" class="reduced items-count" onclick="var result = document.getElementById('qty');
+                         var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 )
+                          result.value--;
+                         return false;">-</button>
                       </td>
-                    
+                      <td>
+                          <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+
+                      </td>
+                      <td>
+                      <button type="button" class="increase items-count " onclick="var result = document.getElementById('qty'); 
+                      var qty = result.value; if( !isNaN( qty )) result.value++;return false;">+</button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <a class="home-product--btn btn btn-success btn-sm" >
-              <input style="box-shadow: none;" type="submit" name="addcart" value="Đặt hàng">
-            </a>
+                <input style="box-shadow: none;" type="submit" name="addcart" value="Đặt hàng">
+               </a>
             </div>
           </div>
           <script type="text/javascript">
@@ -126,19 +123,13 @@
           $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
           });
           });
+
           </script>
           </section>
 
           </form>
           <?php }?>
       </article>
-    <aside class="col-md-2">
-    <div class="title__brand">THƯƠNG HIỆU</div>
-    <?php
-     foreach($brand as $key =>$brand){
-    ?>
-      <div class="category__item"><a href="#"><?php echo $brand['title_brand']?></a></div>
-    <?php } ?>
-    </aside>
+    </div>
    </section>
 

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-    <title>Bootstrap 4 Login/Register Form</title>
+    <title>Login admin</title>
     <style type="text/css">
 
 /* sign in FORM */
@@ -115,13 +115,7 @@
     #logreg-forms .social-btn span{
         display: none;
     }
-    #logreg-forms  .facebook-btn:after{
-        content:'Facebook';
-    }
-  
-    #logreg-forms  .google-btn:after{
-        content:'Google+';
-    }
+   
     
 }
     </style>
@@ -130,21 +124,11 @@
     <div id="logreg-forms">
         <form class="form-signin" autocomplete="off" action="<?php echo BASE_URL?>login/authentication_login" method ="POST">
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng nhập</h1>
-            <div class="social-login">
-                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
-                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
-            </div>
-            <p style="text-align:center"> OR  </p>
             <input type="text" id="inputEmail" name ="username" class="form-control" placeholder="User name" required="1" autofocus="">
             <input type="password" id="inputPassword" name ="password" class="form-control mt-4" placeholder="Password" required="1">
             
             <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
-            <a href="#" id="forgot_pswd">Forgot password?</a>
             <hr>
-           
-           
-            
-           
             </form>
             <br>
             

@@ -1,94 +1,76 @@
 
-<footer class="footer container-fluid">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Trung tâm hỗ trợ </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Mywebsite shop mall </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Hướng dẫn mua hàng</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">Giới thiệu</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Giới thiệu</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Tuyển dụng</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Điều khoản</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">Danh mục</h3>
-                        <ul class="footer-list">
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Gọng kính</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Khung kính </a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">Mắt kính </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">Theo dõi</h3>
-                        <ul class="footer-list">
-                            
-                            <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                    <i class=" footer-item__icon fab fa-facebook"></i>
-                                    Facebook</a>
-                            </li>  
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    <i class="footer-item__icon fab fa-instagram"></i>
-                                    Instagram</a>
-                            </li>
-                            <li class="footer-item">
-                                <a href="" class="footer-item__link">
-                                    <i class="fab fa-youtube"></i>
-                                    Youtube</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="grid__column-2-4">
-                        <h3 class="footer__heading">Vào cửa hàng trên ứng dụng </h3>
-                        <div class="footer__download">
-                            <img src="/assets/img/qr_code.png" alt="Down load QR" class="footer__download-qr">
-                            <div class="footer__download-apps">
-                                <a href="" class="footer__download-app-link">
-                                    <img src="/assets/img/google_play.png" alt="Google play" class="footer__download-app-img">
-                                </a>
-                                <a href="" class="footer__download-app-link">
-                                    <img src="/assets/img/apptore.png" alt="Appstore" class="footer__download-app-img">
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
+<footer class="page-footer ">
+        <div class="container bg-secondary">
+            <div class="row py-4 align-items-center footer-list">
+                <div class="col-md-12 text-center">
+                    <a href="#"><i class="fab text-white mr-4 fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab text-white mr-4 fa-twitter"></i></a>
+                    <a href="#"><i class="fab text-white mr-4 fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab text-white mr-4 fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab text-white mr-4 fa-instagram"></i></a>
                 </div>
             </div>
-            <!-- <div class="footer__bottom">
-                <div class="grid__row">
-                  <p class="footer__text">&copy;&spades;2021 mywebsite</p>
-                 </div>
-            </div> -->
-        </footer>
-</section>
+        </div>
+        <div style="clear:both;"></div>
+    <div class="container text-center container__footer-list text-md-left">
+        <div class="row footer__list">
+            <div class="col-md-3 mx-auto mb-4">
+                <h6 class="text-uppercase mt-2 font-weight-bold text-white">Giới thiệu</h6>
+                <hr class="bg-secondary mb-4 mt-0 d-inline-block mx-auto" style="width:125px;height:2px">
+                <p class="mt-2 text-primary ">
+                    Gọng kính, Tròng kính, Khung kính  thời trang chính hãng Mắt Kính Mywebsite
+                    ra dời từ năm 2020 cho đến nay, và hiện nay Mắt kính Mywebsite là một trong những thương hiệu mắt kính lâu đời Việt Nam.
+                    Cửa hàng chuyên cung cấp các loại mắt kính - gọng kính với mức giá phù hợp với tâm lý khách hàng và có tính cạnh tranh cao. 
+                    Mắt kính Mywebsite luôn luôn mong muốn làm hài lòng mọi loại khách hàng.
+                </p>
+            </div>
+            <div class="col-md-2 mx-auto mb-4">
+                <h6 class="text-uppercase mt-2 font-weight-bold text-white">Về chúng tôi</h6>
+                <hr class="bg-secondary mb-4 mt-0 d-inline-block mx-auto" style="width:125px;height:2px">
+                <ul class="list-unstyled">
+                    <li class="my-2"><a href="">Trung tâm hỗ trợ</a></li>
+                    <li class="my-2"><a href="">Trang chủ</a></li>
+                    <li class="my-2"><a href="">Mywebsite shop mall</a></li>
+                    <li class="my-2"><a href="">Hướng dẫn mua hàng</a></li>
+                </ul>   
+            </div>
+            <div class="col-md-2 mx-auto mb-4">
+                <h6 class="text-uppercase mt-2 font-weight-bold text-white">Danh mục</h6>
+                <hr class="bg-secondary mb-4 mt-0 d-inline-block mx-auto" style="width:125px;height:2px">
+                <ul class="list-unstyled">
+                    <li class="my-2"><a href="">Khung kính</a></li>
+                    <li class="my-2"><a href="">Gọng kính</a></li>
+                    <li class="my-2"><a href="">Mắt kính</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mx-auto mb-4 mt-2">
+                <h6 class="text-uppercase font-weight-bold text-white">Liên hệ </h6>
+                    <hr class="bg-secondary mb-4 mt-0 d-inline-block mx-auto" style="width:125px;height:2px">
+                <ul class="list-unstyled">
+                    <li class="my-2 text-primary"><i class="fas fa-home mr-3 text-light"></i> 789 Tam Trinh, Hoàng Mai, Hà Nội</li>
+                    <li class="my-2 text-primary"><i class="fas fa-envelope mr-3 text-light"></i>tuan.pv.782@aptechlearning.edu.vn</li>
+                    <li class="my-2 text-primary"><i class="fas fa-phone mr-3 text-light"></i>0379679502</li>
+                    <li class="my-2 text-primary"><i class="fas fa-print mr-3 text-light"></i>0864515182</li>
+
+                </ul>
+                <ul class="list-unstyled">
+                    <li class="mr-2 google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.4328832053743!2d105.86377031488243!3d20.97527798602735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac24ebc62489%3A0x9a39e208067104e2!2zNzg5IMSQxrDhu51uZyBUYW0gVHJpbmgsIFnDqm4gU-G7nywgSGFpIELDoCBUcsawbmcsIEjDoCBO4buZaSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1615466213110!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                    </li>
+
+                </ul>
+            </div>    
+        </div>   
+    </div>
+    <div class="footer-copyright text-danger text-center py-3">
+        <p class="footer-text">&copy; Copyright
+            <a href="#">tuan.pv.782@aptechlearning.edu.vn</a>
+        </p>
+    </div>
+</footer>
+
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
