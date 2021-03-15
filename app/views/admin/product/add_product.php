@@ -22,7 +22,7 @@ if(!empty($_GET['msg'])){
         <small id="emailHelp" class="form-text text-muted"></small>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Gía sản phẩm </label>
+        <label for="exampleInputEmail1">Giá sản phẩm </label>
         <input type="text" class="form-control" name ="price_product" id="exampleInputEmail1">
         <small id="emailHelp" class="form-text text-muted"></small>
     </div>

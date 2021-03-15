@@ -86,7 +86,7 @@ img.nav__logo{
     width: 238px !important;
 }
 .mr-4{
-    margin-left: -25px;
+    margin-left: 0px;
 }
 /* footer */
 
@@ -357,4 +357,11 @@ input.btn-gui {
 }
 .contact__register{
     margin-left: -4px;
+}
+.nav-item-link {
+    padding-top: 40px;
+    color: black;
+}
+.nav-item-left {
+    padding-top: 1px !important;
 }

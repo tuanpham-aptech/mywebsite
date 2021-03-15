@@ -19,20 +19,11 @@ Class login extends DController{
     }
     public function login(){
         Session::init();
-        $table_categories = 'categories';
-        $table_brand = 'brand';
-        $table_product = 'products';
-        $homemodel =  $this->load->model('homemodel');
-          $data['category'] = $homemodel->category($table_categories);
-          $data['brand'] = $homemodel->brand($table_brand);
-          $data['product'] = $homemodel->product($table_product);
-        $this->load->view('header',$data);
-        if(Session::get("login")== true){
-            header("Location:".BASE_URL."/login/dashboard");
+        if(Session::get("login")==true){
+            header("Location:".BASE_URL."login/dashboard");
         }
         $this->load->view('admin/login');
         $this->load->view('footer');
-
     }
     public function authentication_login(){
          $username = $_POST['username'];
@@ -43,7 +34,7 @@ Class login extends DController{
          $count = $loginmodel->login($table_admin,$username,$password);// nếu có trong database có trả về 1 
         if($count == 0){
             $message['msg'] = "Username or Password không chính xác, xin kiểm tra lại ";
-            header("Location:".BASE_URL."/login",$message['msg']);
+            header("Location:".BASE_URL."login",$message['msg']);
         }else{
            $result = $loginmodel->getLogin($table_admin,$username,$password);
            //gọi Session ra 
@@ -52,14 +43,14 @@ Class login extends DController{
            Session::set('username',$result[0]['username']);// trong đó username là key còn $result[0]['username'] là value
            Session::set('userid',$result[0]['userid']);// trong đó userid là key còn $result[0]['userid'] là value
 
-           header("Location:".BASE_URL."/login/dashboard");
+           header("Location:".BASE_URL."login/dashboard");
         }
     }
 
     public function logout(){
         Session::init();
         unset($_SESSION['login']);
-        header("Location:".BASE_URL."/login");
+        header("Location:".BASE_URL."login");
 
     }
   

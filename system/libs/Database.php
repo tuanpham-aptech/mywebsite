@@ -48,7 +48,7 @@ Class Database extends PDO{
 
     public function affectedRows($sql,$username,$password){// hàm so sánh dữ liệu đăng nhập trong database và người dùng 
         $stmt = $this->prepare($sql);
-        $stmt->execute(array($username,$password));// so sánh vs csdl
+        $stmt->execute(array($username,$password));
         return $stmt->rowCount();//trả về nếu đúng 1 
     }
 

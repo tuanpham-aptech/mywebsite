@@ -21,9 +21,9 @@ Class brand extends DController{
         $this->load->view('admin/header');
         $this->load->view('admin/menu');
         $table = 'brand';
-        $brandmodel = $this->load->model('brandmodel');// gọi ra model gọi từ model brand
-        $data['brand'] = $brandmodel->brand($table);// lấy dữ liệu ra lưu vào biến data 
-        $this->load->view('admin/brand/list_brand',$data);// truyền dữ liệu sang view hiển thị 
+        $brandmodel = $this->load->model('brandmodel');
+        $data['brand'] = $brandmodel->brand($table);
+        $this->load->view('admin/brand/list_brand',$data);
         $this->load->view('admin/footer');
     }
     public function brand_product($id){
@@ -81,9 +81,9 @@ Class brand extends DController{
     }
     public function edit_brand($id){ 
         $table = 'brand';
-        $cond = "brand.id_brand = '$id'";// condition
-        $brandmodel = $this->load->model('brandmodel');// gọi ra model gọi từ model category
-        $data['brandbyid'] = $brandmodel->brandbyid($table,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $cond = "brand.id_brand = '$id'";
+        $brandmodel = $this->load->model('brandmodel');
+        $data['brandbyid'] = $brandmodel->brandbyid($table,$cond);
         $this->load->view('admin/header');
         $this->load->view('admin/menu');
         $this->load->view('admin/brand/edit_brand',$data);
@@ -93,11 +93,11 @@ Class brand extends DController{
         $brandmodel =  $this->load->model('brandmodel');
         $title_brand = $_POST['title_brand'];
         $table_brand = 'brand';
-        $cond = "id_brand = '$id'";// condition
+        $cond = "id_brand = '$id'";
         $data = array(
             'title_brand'=>$title_brand
         );
-        $result = $brandmodel->updatebrand($table_brand,$data,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $result = $brandmodel->updatebrand($table_brand,$data,$cond); 
         if($result == 1 ){
             $message['msg'] = "Cập nhật danh mục thành công  ";
             header("Location:".BASE_URL."/brand/list_brand?msg=".urlencode(serialize($message)));
@@ -110,9 +110,9 @@ Class brand extends DController{
 
     public function delete_brand($id){
         $table = 'brand';
-        $cond = "brand.id_brand = '$id'";// condition
-        $brandmodel = $this->load->model('brandmodel');// gọi ra model gọi từ model category
-        $result = $brandmodel->deletebrand($table,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $cond = "brand.id_brand = '$id'";
+        $brandmodel = $this->load->model('brandmodel');
+        $result = $brandmodel->deletebrand($table,$cond);
         if($result == 1 ){
             $message['msg'] = "Xóa danh mục thành công  ";
             header("Location:".BASE_URL."/brand/list_brand?msg=".urlencode(serialize($message)));

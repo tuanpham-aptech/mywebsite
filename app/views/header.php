@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                     <a class="nav-link" href="http://localhost:81/mywebsite/">Home <span class="sr-only">(current)</span></a>
+                     <a class="nav-link nav-item-left" href="http://localhost:81/mywebsite/">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active dropdown">
-                     <a class="nav-link " id="navbarDropdown" >
+                     <a class="nav-link nav-item-left " id="navbarDropdown" >
                      Danh mục sản phẩm
                      </a>
                      <div class="dropdown-content" aria-labelledby="navbarDropdown">
@@ -34,7 +34,7 @@
                      </div>
                   </li>
                   <li class="nav-item active dropdown">
-                     <a class="nav-link " id="navbarDropdown" >
+                     <a class="nav-link nav-item-left " id="navbarDropdown" >
                      Thương hiệu
                      </a>
                      <div class="dropdown-content" aria-labelledby="navbarDropdown">
@@ -45,16 +45,15 @@
                         <?php }?>
                      </div>
                   </li>
-                  <li class="nav-item active">
-                     <a class="nav-link " href="http://localhost:81/mywebsite/index/contact_us">Liên hệ </a>
+                  <li class="nav-item  active">
+                     <a class="nav-link nav-item-left " href="http://localhost:81/mywebsite/index/contact_us">Liên hệ </a>
                   </li>
-                  <?php
-                     if(Session::get('customer')==true){ ?> 
-                  <li class="nav-item active">
+                  <?php if(Session::get('customer')==true){ ?> 
+                  <li class="nav-item ">
                      <a  class="nav-item-link" href="http://localhost:81/mywebsite/customer/customer_logout">Đăng xuất</a>
                   </li>
                   <?php }else{ ?>   
-                  <li class="nav-item active">
+                  <li class="nav-item">
                      <a class="nav-item-link" href="http://localhost:81/mywebsite/customer/customer_login">Đăng nhập</a>
                   </li>
                   <?php } ?>

@@ -18,7 +18,6 @@ Class customer extends DController{
         $table_brand = 'brand';
         $table_product = 'products';
         $table_customer = 'customers';
-        Session::init();
         $homemodel =  $this->load->model('homemodel');
         $customermodel =  $this->load->model('customermodel');
 
@@ -26,6 +25,7 @@ Class customer extends DController{
           $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product($table_product);
           $data['customer'] = $customermodel->customer($table_customer);
+          Session::init();
           $this->load->view('header',$data);
           $this->load->view('customer_login');
           $this->load->view('footer');
@@ -48,7 +48,7 @@ Class customer extends DController{
         );
         $customermodel =  $this->load->model('customermodel');
 
-        $result = $customermodel->insertcustomer($table_customer,$data);// kết quả thêm dũ liệu vào bảng
+        $result = $customermodel->insertcustomer($table_customer,$data);
         if($result == 1 ){  
             $message['msg'] = "Đăng kí thành công  ";
             header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
@@ -63,26 +63,27 @@ Class customer extends DController{
         $table_customer = 'customers';
         $customermodel = $this->load->model('customermodel');
         $count = $customermodel->login($table_customer,$username,$password);// nếu có trong database có trả về 1 
-        
+
        if($count == 0){
            $message['msg'] = "Tên tài khoản hoặc mật khẩu không chính xác, xin kiểm tra lại ";
            header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
         }else{
           $result = $customermodel->getLogin($table_customer,$username,$password);
-          //gọi Session ra 
-          Session::init();
+        //   Session::init();
           Session::set('customer',true);// K T N D D D N CHƯA 
-          Session::set('customer_email',$result[0]['customer_email']);// trong đó username là key còn $result[0]['username'] là value
+          Session::set('customer_name',$result[0]['customer_name']);// trong đó customer_email là key còn $result[0]['customer_email'] là value
           Session::set('customer_id',$result[0]['customer_id']);// trong đó userid là key còn $result[0]['userid'] là value
+          
+          $message['msg'] = "Đăng nhập tài khoản thành công";
           header('Location:'.BASE_URL."?msg=".urlencode(serialize($message)));
         }
     }
     public function customer_logout(){
-		
         Session::init();
         Session::unset('customer');
         $message['msg'] = "Đăng xuất tài khoản thành công";
-        header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));	
+        header('Location:'.BASE_URL."customer/customer_login?msg=".urlencode(serialize($message)));	
+
     }
    
 }

@@ -14,7 +14,7 @@
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<?php echo BASE_URL?>/post">Thêm </a>
-        <a class="dropdown-item" href="<?php echo BASE_URL?>/post/list_category">Liệt kê</a>
+        <a class="dropdown-item" href="<?php echo BASE_URL?>/post/list_post">Liệt kê</a>
       </div>
     </li>
     <!--Danh mục sản phẩm -->

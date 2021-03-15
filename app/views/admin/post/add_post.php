@@ -10,7 +10,7 @@ if(!empty($_GET['msg'])){
 
 <h6 class="add_category">Thêm danh mục bài viết </h6>
 <div class="col-md-6">
-    <form method ="POST" action ="<?php echo BASE_URL?>/post/insert_category">
+    <form method ="POST" action ="<?php echo BASE_URL?>/post/insert_post">
     <div class="form-group">
         <label for="exampleInputEmail1">Tên danh mục </label>
         <input type="text" class="form-control" name ="title_category_post" id="exampleInputEmail1">

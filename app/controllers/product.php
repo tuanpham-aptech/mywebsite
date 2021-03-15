@@ -25,7 +25,7 @@ Class product extends DController{
         );
         $categorymodel =  $this->load->model('categorymodel');
 
-        $result = $categorymodel->insertcategory($table_categories,$data);// kết quả thêm dũ liệu vào bảng
+        $result = $categorymodel->insertcategory($table_categories,$data);
         if($result == 1 ){  
             $message['msg'] = "Thêm danh mục sản phẩm thành công  ";
             header('Location:'.BASE_URL."/product?msg=".urlencode(serialize($message)));
@@ -37,20 +37,18 @@ Class product extends DController{
 
     public function list_category(){
         $this->load->view('admin/header');
-        $this->load->view('slider');
-
         $this->load->view('admin/menu');
         $table = 'categories';
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $data['category'] = $categorymodel->category($table);// lấy dữ liệu ra lưu vào biến data 
-        $this->load->view('admin/product/list_category',$data);// truyền dữ liệu sang view hiển thị 
+        $categorymodel = $this->load->model('categorymodel');
+        $data['category'] = $categorymodel->category($table);
+        $this->load->view('admin/product/list_category',$data); 
         $this->load->view('admin/footer');
     }
     public function delete_category($id){
         $table = 'categories';
-        $cond = "categories.id = '$id'";// condition
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $result = $categorymodel->deletecategory($table,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $cond = "categories.id = '$id'";
+        $categorymodel = $this->load->model('categorymodel');
+        $result = $categorymodel->deletecategory($table,$cond); 
         if($result == 1 ){
             $message['msg'] = "Xóa danh mục thành công  ";
             header("Location:".BASE_URL."/product/list_category?msg=".urlencode(serialize($message)));
@@ -62,9 +60,9 @@ Class product extends DController{
     }
     public function edit_category($id){ 
         $table = 'categories';
-        $cond = "categories.id = '$id'";// condition
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $data['categorybyid'] = $categorymodel->categorybyid($table,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $cond = "categories.id = '$id'";
+        $categorymodel = $this->load->model('categorymodel');
+        $data['categorybyid'] = $categorymodel->categorybyid($table,$cond); 
         $this->load->view('admin/header');
         $this->load->view('admin/menu');
         $this->load->view('admin/product/edit_category',$data);
@@ -77,8 +75,8 @@ Class product extends DController{
         $data = array(
             'name'=>$title_category_product
         );
-        $categorymodel = $this->load->model('categorymodel');// gọi ra model gọi từ model category
-        $result = $categorymodel->updatecategory($table,$data,$cond);// lấy dữ liệu ra lưu vào biến data 
+        $categorymodel = $this->load->model('categorymodel');
+        $result = $categorymodel->updatecategory($table,$data,$cond);
         if($result == 1 ){
             $message['msg'] = "Cập nhật danh mục thành công  ";
             header("Location:".BASE_URL."/product/list_category?msg=".urlencode(serialize($message)));
@@ -92,10 +90,9 @@ Class product extends DController{
     public function add_product(){
         $this->load->view('admin/header');
         $this->load->view('admin/menu');
-        // lấy ra category_product
         $table_categories = 'categories';
         $categorymodel =  $this->load->model('categorymodel');
-        $data['category'] = $categorymodel->category($table_categories);// lấy dữ liệu ra lưu vào biến data 
+        $data['category'] = $categorymodel->category($table_categories);
         $this->load->view('admin/product/add_product',$data);
         $this->load->view('admin/footer');
     }
@@ -122,12 +119,12 @@ Class product extends DController{
             'price_product'=>$price,
             'quantity_product'=>$quantity,
             'image_product'=>$unique_image,
-            'id_category_product'=>$categoryid// trong đó id_category_product là các cột trong csdl 
+            'id_category_product'=>$categoryid 
 
         );
         $categorymodel =  $this->load->model('categorymodel');
 
-        $result = $categorymodel->insertproduct($table,$data);// kết quả thêm dũ liệu vào bảng
+        $result = $categorymodel->insertproduct($table,$data);
         if($result == 1 ){  
             $message['msg'] = "Thêm danh mục sản phẩm thành công  ";
             header('Location:'.BASE_URL."/product/add_product?msg=".urlencode(serialize($message)));
@@ -139,7 +136,7 @@ Class product extends DController{
 
     public function delete_product($id){
         $table = 'products';
-        $cond = "id_product = '$id'";// condition
+        $cond = "id_product = '$id'";
         $categorymodel = $this->load->model('categorymodel');
         $result = $categorymodel->delete_product($table,$cond);
         if($result == 1 ){
@@ -159,14 +156,14 @@ Class product extends DController{
         $table_category = 'categories';
         $categorymodel = $this->load->model('categorymodel');
         $data['category'] = $categorymodel->list_product($table_product,$table_category); 
-        $this->load->view('admin/product/list_product',$data);// truyền dữ liệu sang view hiển thị 
+        $this->load->view('admin/product/list_product',$data);
         $this->load->view('admin/footer');
     }
 
     public function edit_product($id){ 
         $table_product = 'products';
         $table_category = 'categories';
-        $cond = "id_product = '$id'";// condition
+        $cond = "id_product = '$id'";
         $categorymodel = $this->load->model('categorymodel');
         $data['productbyid'] = $categorymodel->productbyid($table_product,$cond);
         $data['category'] = $categorymodel->category($table_category);
@@ -196,7 +193,7 @@ Class product extends DController{
         $path_uploads = "public/uploads/product/".$unique_image;
 
         if($image){
-            $data['productbyid'] = $categorymodel->productbyid($table_product,$cond);// lấy dữ liệu ra lưu vào biến data 
+            $data['productbyid'] = $categorymodel->productbyid($table_product,$cond); 
             foreach($data['productbyid'] as $key => $value){
                 $path_unlink ="public/uploads/product/"; 
                     unlink($path_unlink.$value['image_product']);// hủy liên kết 
@@ -217,12 +214,11 @@ Class product extends DController{
                 'desc_product'=>$desc,
                 'price_product'=>$price,
                 'quantity_product'=>$quantity,
-                //'image_product'=>$unique_image,
-                'id_category_product'=>$categoryid// trong đó id_category_product là các cột trong csdl 
+                'id_category_product'=>$categoryid
     
             );
         }
-        $result = $categorymodel->updateproduct($table,$data,$cond);// kết quả thêm dũ liệu vào bảng
+        $result = $categorymodel->updateproduct($table,$data,$cond);
         if($result == 1 ){  
             $message['msg'] = "Cập nhật sản phẩm thành công  ";
             header('Location:'.BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
