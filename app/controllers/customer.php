@@ -59,7 +59,7 @@ Class customer extends DController{
             $message['msg'] = "Đăng kí thành công  ";
             header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
         }else{
-            $message['msg'] = "Đăng kí thất bại ";
+            $message['msg'] = "Đăng kí thất bại do email đã tồn tại mời nhập email khác ";
             header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
         }
     }
