@@ -14,6 +14,16 @@
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<?php echo BASE_URL?>/post">Thêm </a>
+        <a class="dropdown-item" href="<?php echo BASE_URL?>/post/list_category">Liệt kê</a>
+      </div>
+    </li>
+      <!-- Danh mục bài viết -->
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Bài viết  
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="<?php echo BASE_URL?>/post/add_post">Thêm </a>
         <a class="dropdown-item" href="<?php echo BASE_URL?>/post/list_post">Liệt kê</a>
       </div>
     </li>

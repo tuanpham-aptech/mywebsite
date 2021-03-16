@@ -33,7 +33,7 @@ if(!empty($_GET['msg'])){
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Miêu tả sản phẩm </label>
-        <textarea class="form-control" rows="5" style="resize:none;" name ="desc_product" ></textarea>
+        <textarea id="editor" class="form-control" rows="5" style="resize:none;" name ="desc_product" ></textarea>
         <small id="emailHelp" class="form-text text-muted"></small>
     </div>
     <div class="form-group">

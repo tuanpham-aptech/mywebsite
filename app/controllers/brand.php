@@ -3,6 +3,7 @@
 Class brand extends DController{
 
     public function __construct(){
+        Session::init();
         $data = array();
         $massage = array();
         parent::__construct();

@@ -163,6 +163,9 @@ img.nav__logo{
 .mb-5{
     margin-top: 10px;
 }
+.card-title{
+    font-size: 0.9rem;
+}
 .wapper{
     list-style: none;
     text-decoration: none;
@@ -354,6 +357,9 @@ input.btn-gui {
 .contact__login,.contact__register{
     border: grey thin solid;
     border-radius: 5px;
+}
+.contact__login{
+    height: 450px;
 }
 .contact__register{
     margin-left: -4px;

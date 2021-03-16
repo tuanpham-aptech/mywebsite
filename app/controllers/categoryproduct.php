@@ -4,6 +4,7 @@
 Class categoryproduct extends DController{
 
     public function __construct(){
+      Session::init();
         $data = array();
         parent::__construct();
     }

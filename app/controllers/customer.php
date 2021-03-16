@@ -13,7 +13,8 @@ Class customer extends DController{
 
     }
 
-     public function customer_login(){// load view  đăng nhập 
+     public function customer_login(){// load view  đăng nhập
+        Session::init(); 
         $table_categories = 'categories';
         $table_brand = 'brand';
         $table_product = 'products';
@@ -25,19 +26,20 @@ Class customer extends DController{
           $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product($table_product);
           $data['customer'] = $customermodel->customer($table_customer);
-          Session::init();
+
           $this->load->view('header',$data);
           $this->load->view('customer_login');
           $this->load->view('footer');
      }
      public function insert_register(){
+        $table_customer = 'customers';
         $name = $_POST['username'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $address = $_POST['address'];
-
-        $table_customer = 'customers';
+        $customermodel =  $this->load->model('customermodel');
+        $count = $customermodel->countUser($table_customer,$email);
         $data = array(
             'customer_name'=>$name,
             'customer_phone'=>$phone,
@@ -46,9 +48,13 @@ Class customer extends DController{
             'customer_address'=>$address,
 
         );
-        $customermodel =  $this->load->model('customermodel');
-
-        $result = $customermodel->insertcustomer($table_customer,$data);
+        
+        if($count < 1){
+            $result = $customermodel->insertcustomer($table_customer,$data);
+        }
+        else{
+            echo "Email đã tồn tại mời nhập email khác ";
+        }
         if($result == 1 ){  
             $message['msg'] = "Đăng kí thành công  ";
             header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
@@ -69,13 +75,13 @@ Class customer extends DController{
            header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
         }else{
           $result = $customermodel->getLogin($table_customer,$username,$password);
-        //   Session::init();
+          Session::init();
           Session::set('customer',true);// K T N D D D N CHƯA 
           Session::set('customer_name',$result[0]['customer_name']);// trong đó customer_email là key còn $result[0]['customer_email'] là value
           Session::set('customer_id',$result[0]['customer_id']);// trong đó userid là key còn $result[0]['userid'] là value
           
           $message['msg'] = "Đăng nhập tài khoản thành công";
-          header('Location:'.BASE_URL."?msg=".urlencode(serialize($message)));
+          header('Location:'.BASE_URL."customer/customer_login?msg=".urlencode(serialize($message)));
         }
     }
     public function customer_logout(){

@@ -3,7 +3,7 @@
 Class index extends DController{
   
     public function __construct(){
-      // Session::init();
+      Session::init();
         $data = array();
         parent::__construct();
     }

@@ -9,7 +9,7 @@ Class customermodel extends DModel{
     }
     public function customer($table_customer){
         $sql = "SELECT *FROM $table_customer ORDER BY id DESC";
-        return $this->db->select($sql);// truyền vào bảng cần lấy dữ liệu 
+        return $this->db->select($sql);
      }
      public function customerbyid($table,$cond){
         $sql = "SELECT *FROM $table WHERE $cond";
@@ -17,9 +17,15 @@ Class customermodel extends DModel{
      }
 
      public function insertcustomer($table_categories,$data){
+
         return $this->db->insert($table_categories,$data);  
      }
-
+     // hàm mới 
+     public function countUser($table_customer,$email){
+         $sql = "SELECT *FROM $table_customer WHERE customer_email = ?";
+        return $this->db->countRegister($sql,$email);
+     }
+    //  end hàm mới 
      public function updatecustomer($table_categories,$data,$cond){
          return $this->db->update($table_categories,$data,$cond);
      }
@@ -29,7 +35,7 @@ Class customermodel extends DModel{
      }
      public function login($table_customer,$username,$password){
         $sql = "SELECT *FROM $table_customer WHERE customer_email = ? AND customer_password = ?";
-        return $this->db->affectedRows($sql,$username,$password);// truyền vào bảng cần lấy dữ liệu 
+        return $this->db->affectedRows($sql,$username,$password);
     }
     public function getLogin($table_customer,$username,$password){// lấy ra 
         

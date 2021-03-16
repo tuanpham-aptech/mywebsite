@@ -59,5 +59,11 @@ Class Database extends PDO{
         return  $stmt->fetchAll(PDO:: FETCH_ASSOC);// trả về dl người đăng nhập 
 
     }
+    // hàm mới 
+    public function countRegister($sql,$email){
+        $stmt = $this->prepare($sql);
+        $stmt->execute(array($email));
+        return $stmt->rowCount();// trả về số lượng 
+    }
 
 }

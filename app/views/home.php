@@ -21,13 +21,17 @@
                   </a> 
                   <div class="card-body">
                     <h5 class="card-title">
-                    <a href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $pro['id_product']?>">
-                          <?php echo $pro['title_product']?>
-                    </a></h5>
+                      <a href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $pro['id_product']?>">
+                        <?php echo $pro['title_product']?>
+                      </a>
+                    </h5>
                     <p class="card-text"><?php echo number_format($pro['price_product'],0,',','.')?>vnđ</p>
-                    <a href="#" class="btn btn-primary product-group-btn">
-                      <input style="box-shadow: none;" type="submit" name="addcart" value="Đặt mua">
-                    </a>
+                    <div class="btn-addcart">
+                      <a href="#" class="btn btn-primary product-group-btn">
+                        <input style="box-shadow: none;" type="submit" name="addcart" value="Đặt mua">
+                      </a>
+                    </div>
+                  
                   </div>
                 </div>
               </div>

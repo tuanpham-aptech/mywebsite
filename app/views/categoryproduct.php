@@ -1,9 +1,9 @@
 
    <div class="container">
   <div class="row">
-    <h2 class="list-product-title">List Product Title</h2>
+    <h2 class="list-product-title">Danh mục tiêu đề sản phẩm </h2>
     <div class="list-product-subtitle">
-      <p>List Product description</p>
+      <h5>Liệt kê mô tả sản phẩm</h5>
     </div>
     <div class="product-group">
       <div class="row">

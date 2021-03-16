@@ -189,7 +189,8 @@ Class product extends DController{
         $tmp_image = $_FILES['image_product']['tmp_name'];// biến tạm name
         $div = explode('.',$image);
         $file_ext = strtolower(end($div));// đổi tất cả thành chữ thường và thêm đuôi mở rộng vào cuối 
-        $unique_image = $div[0] .'.'.$file_ext;// biến thời gian chánh trùng hình ảnh 
+        // $unique_image = $div[0] .'.'.$file_ext;
+        $unique_image = $div[0].time().'.'.$file_ext;// biến thời gian chánh trùng hình ảnh 
         $path_uploads = "public/uploads/product/".$unique_image;
 
         if($image){

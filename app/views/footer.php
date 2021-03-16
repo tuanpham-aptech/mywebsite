@@ -3,10 +3,10 @@
         <div class="container bg-secondary">
             <div class="row py-4 align-items-center footer-list">
                 <div class="col-md-12 text-center">
-                    <a href="#"><i class="fab text-white mr-4 fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/tuanpham.net"><i class="fab text-white mr-4 fa-facebook-f"></i></a>
                     <a href="#"><i class="fab text-white mr-4 fa-twitter"></i></a>
                     <a href="#"><i class="fab text-white mr-4 fa-google-plus-g"></i></a>
-                    <a href="#"><i class="fab text-white mr-4 fa-linkedin-in"></i></a>
+                    <a href="https://mail.google.com/mail"><i class="text-white mr-4 fas fa-envelope-square"></i></a>
                     <a href="#"><i class="fab text-white mr-4 fa-instagram"></i></a>
                 </div>
             </div>
@@ -75,4 +75,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor' );
+</script>
 </html>

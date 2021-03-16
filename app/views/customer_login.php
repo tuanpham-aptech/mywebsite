@@ -12,7 +12,7 @@
       </div>
    </div>
    <div class="row">
-      <div class="col-md-7 contact__register">
+      <div class="col-md-6 contact__register">
          <h5 class="contact__register-title text-center mt-2">Đăng kí khách hàng </h5>
          <form action="<?php echo BASE_URL?>customer/insert_register" method="POST">
             <div class="container contact__properties">
@@ -25,32 +25,33 @@
                </div>
                <div class="row">
                   <div class="input">
+                     <label>Mật khẩu: <span style="color:red;">*</span></label>
+                     <input type="password" title="Mật phải từ 6 kí tự" name="password" required class="clsip" >
+                  </div>
+                  <div class="clear"></div>
+               </div>
+               <div class="row">
+                  <div class="input">
                      <label>Số điện thoại: <span style="color:red;">*</span></label>
-                     <input type="text" name="phone" required  class="clsip">
+                     <input type="tel" pattern="\d{10,13}" name="phone" required  class="clsip">
                   </div>
                   <div class="clear"></div>
                </div>
                <div class="row">
                   <div class="input">
                      <label>Địa chỉ: <span style="color:red;">*</span></label>
-                     <input type="text" name="address" required class="clsip" >
+                     <textarea name="address"  cols="30" style="width:540px;" rows="4"></textarea>
                   </div>
                   <div class="clear"></div>
                </div>
                <div class="row">
                   <div class="input">
                      <label>Email: <span style="color:red;">*</span></label>
-                     <input type="text" name="email" required class="clsip">
+                     <input type="email" pattern=".+@.+(\.[a-z]{2,3}){1,2}" name="email" required class="clsip">
                   </div>
                   <div class="clear"></div>
                </div>
-               <div class="row">
-                  <div class="input">
-                     <label>Mật khẩu: <span style="color:red;">*</span></label>
-                     <input type="password" name="password" required class="clsip" >
-                  </div>
-                  <div class="clear"></div>
-               </div>
+            
                <div class="row btnclass">
                   <div class="contact__properties-input ipmaxn mb-2 ">
                      <input type="submit" class="btn-gui btn btn-success" name="register" id="frmSubmit" 
@@ -61,6 +62,7 @@
             </div>
          </form>
       </div>
+      <div class="col-md-1"></div>
       <div class="col-md-5 contact__login">
          <h5 class="contact__login-title text-center mt-2">Đăng nhập khách hàng </h5>
          <form action="<?php echo BASE_URL?>customer/customer_login_user" method="POST">
