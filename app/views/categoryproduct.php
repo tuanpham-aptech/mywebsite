@@ -8,7 +8,7 @@
     <div class="product-group">
       <div class="row">
           <?php foreach($category_by_id as $key =>$cbt){?>
-            <form action="<?php echo BASE_URL?>/ordercartuser/addtocart" class="product-group-form d-flex" method ="POST">
+            <form action="<?php echo BASE_URL?>categoryproduct/product_detail/<?php echo $cbt['id_product']?>" class="product-group-form d-flex" method ="POST">
               <input type="hidden" value="<?php echo $cbt['id_product']?>" name ="product_id">
               <input type="hidden" value="<?php echo $cbt['title_product']?>" name ="product_title">
               <input type="hidden" value="<?php echo $cbt['image_product']?>" name ="product_image">

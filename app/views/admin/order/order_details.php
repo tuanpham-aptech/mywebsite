@@ -55,7 +55,6 @@
         $total+=$ord['product_quantity']*$ord['price_product'];
         $i++;
        ?>
-
       <tr>
         <td><?php echo $i ?></td>
         <td><?php echo $ord['title_product'] ?></td>
@@ -70,7 +69,7 @@
       ?>
       <form method="POST" action="<?php echo BASE_URL ?>/order/order_confirm/<?php echo $ord['order_code'] ?>"><!-- Đã xử lý -->
       <tr>
-        <td><input type="submit" name="update_order" value="Đã xử lý" class="btn btn-default"></td>
+        <td><input type="submit" name="update_order" value="Nhấn để xử lý đơn hàng" class="btn btn-default"></td>
         <td align="right" colspan="6">Tổng tiền : <?php echo number_format($total,0,',','.').'đ' ?></td>
       </tr>
       </form>

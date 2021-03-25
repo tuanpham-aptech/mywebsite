@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                     <a class="nav-link nav-item-left" href="http://localhost:81/mywebsite/">Home <span class="sr-only">(current)</span></a>
+                     <a class="nav-link nav-item-left" href="http://localhost:81/mywebsite/">Trang chủ  <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item active dropdown">
                      <a class="nav-link nav-item-left " id="navbarDropdown" >
@@ -54,6 +54,7 @@
                   </li>
                   <?php }else{ ?>   
                   <li class="nav-item">
+                  <i class="fa fa-user icon"></i>
                      <a class="nav-item-link" href="http://localhost:81/mywebsite/customer/customer_login">Đăng nhập</a>
                   </li>
                   <?php } ?>
@@ -64,7 +65,7 @@
                   </li>
                   <form class="active" method="POST" action="http://localhost:81/mywebsite/index/search">
                      <input class="form-control mr-sm-1 nav__search" name="keyword" type="text" >
-                     <button class="btn btn-outline-success my-1 my-sm-0" name="search" type="submit">Search </button>
+                     <button class="btn btn-outline-success my-1 my-sm-0" name="search" type="submit"><i class="fas fa-search"></i></button>
                   </form>
                   </ul>
             </div>

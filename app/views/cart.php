@@ -197,8 +197,8 @@
                                     <!---row---->
                                     <div class="row btnclass">
                                        <div class="input ipmaxn ">
-                                          <input type="submit" class="btn-gui" name="frmSubmit" id="frmSubmit" value="Gửi đơn hàng">
-                                          <input type="reset" class="btn-gui" value="Nhập lại">
+                                          <input type="submit" class="btn-gui btn btn-info" name="frmSubmit" id="frmSubmit" value="Thanh toán ">
+                                          <input type="reset" class="btn-gui btn btn-info" value="Nhập lại">
                                        </div>
                                        <div class="clear"></div>
                                     </div>

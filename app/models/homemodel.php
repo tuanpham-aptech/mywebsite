@@ -38,11 +38,7 @@ Class homemodel extends DModel{
       $sql = "SELECT *FROM $table_product WHERE $table_product.id_product = '$id' ";
      return $this->db->select($sql);// truyền vào bảng cần lấy dữ liệu 
    }
-   public function product_detail_comment($table_product,$table_customers,$table_comments,$id){
-      $sql = "SELECT *FROM $table_product a join $table_comments b on a.id_product = b.id_product join $table_customers c on b.customer_id = c.customer_id
-       WHERE $table_product.id_product = '$id' ";
-     return $this->db->select($sql);// truyền vào bảng cần lấy dữ liệu 
-   }
+ 
   
 }
 ?>

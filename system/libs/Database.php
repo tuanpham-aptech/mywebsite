@@ -65,5 +65,9 @@ Class Database extends PDO{
         $stmt->execute(array($email));
         return $stmt->rowCount();// trả về số lượng 
     }
+    // hàm mới của comment 
+    // public function checkInsertComment($sql){
+    //     $stmt = $this->prepare($sql);
+    // }
 
 }

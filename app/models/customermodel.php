@@ -11,23 +11,23 @@ Class customermodel extends DModel{
         $sql = "SELECT *FROM $table_customer ORDER BY id DESC";
         return $this->db->select($sql);
      }
-     public function customerbyid($table,$cond){
+    public function customerbyid($table,$cond){
         $sql = "SELECT *FROM $table WHERE $cond";
        return $this->db->select($sql); 
-     }
+    }
 
-     public function insertcustomer($table_categories,$data){
+    public function insertcustomer($table_categories,$data){
 
         return $this->db->insert($table_categories,$data);  
      }
+    
      // hàm mới 
      public function countUser($table_customer,$email){
          $sql = "SELECT *FROM $table_customer WHERE customer_email = ?";
         return $this->db->countRegister($sql,$email);
-     }
-    //  end hàm mới 
-     public function updatecustomer($table_categories,$data,$cond){
-         return $this->db->update($table_categories,$data,$cond);
+    }
+    public function updatecustomer($table_categories,$data,$cond){      
+        return $this->db->update($table_categories,$data,$cond);
      }
 
      public function deletecustomer($table_categories,$cond){
@@ -41,6 +41,17 @@ Class customermodel extends DModel{
         
         $sql = "SELECT *FROM $table_customer WHERE customer_email = ? AND customer_password = ?";
         return $this->db->selectUser($sql,$username,$password);// truyền vào bảng cần lấy dữ liệu 
+    }
+    // comment 
+    public function insertComment($table_comment,$data){
+        return $this->db->insert($table_comment,$data);  
+    }
+    // public function getComment($table_comments,$table_customers,$cond){
+    //     $sql = "SELECT *FROM  $table_comments,$table_customers";
+    // }
+    public function getIdCustomerComment($table_comment,$key){
+        $sql = "SELECT  customer_id FROM $table_comment WHERE customer_id = '$key' ";
+        return $this->db->select($sql);
     }
     
 

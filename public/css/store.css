@@ -342,6 +342,12 @@ input.btn-gui {
     text-transform: uppercase;
     border: 1px solid #333;
 }
+.btn-outline-success {
+    margin-left: -42px;
+    background-color: transparent;
+    background-image: none;
+    
+}
 .bdnone {
     border: none;
 }

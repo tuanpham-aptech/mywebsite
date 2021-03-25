@@ -20,7 +20,7 @@ Class ordermodel extends DModel{
       return $this->db->select($sql);
    }
    public function list_info($table_order_details,$cond_info){
-      $sql = "SELECT * FROM $table_order_details WHERE $cond_info LIMIT 1";
+      $sql = "SELECT * FROM $table_order_details WHERE $cond_info LIMIT 1";// chỉ lấy 1 mã 
       return $this->db->select($sql);
    }
    public function order_confirm($table_order,$data,$cond){

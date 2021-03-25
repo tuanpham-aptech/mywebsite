@@ -33,18 +33,18 @@ Class categoryproduct extends DController{
         $table_brand = 'brand';
         $table_product = 'products';
         $table_customers = 'customers';
-        $table_comments = 'comments';
         $homemodel =  $this->load->model('homemodel');
           $data['category'] = $homemodel->category($table_categories);
           $data['brand'] = $homemodel->brand($table_brand);
           $data['product'] = $homemodel->product_detail($table_product,$id);
-          $data['comment'] = $homemodel->product_detail_comment($table_product,$table_customers,$table_comments,$id);
           $data['category_by_id'] = $homemodel->category_by_id($table_categories,$table_product,$id);
         $this->load->view('header',$data);
         $this->load->view('product_detail',$data);
        
         $this->load->view('footer');
     }
+
+    
     public function notfound(){
         $table_categories = 'categories';
         $table_brand = 'brand';

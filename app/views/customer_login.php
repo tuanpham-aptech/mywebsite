@@ -26,7 +26,7 @@
                <div class="row">
                   <div class="input">
                      <label>Mật khẩu: <span style="color:red;">*</span></label>
-                     <input type="password" title="Mật phải từ 6 kí tự" name="password" required class="clsip" >
+                     <input type="password" title="Mật khẩu phải từ 6 kí tự" name="password" required class="clsip" >
                   </div>
                   <div class="clear"></div>
                </div>
