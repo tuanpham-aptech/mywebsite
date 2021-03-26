@@ -1,0 +1,13 @@
+/*nơi khai báo biến css */
+:root{
+    --primary-color:rgb(227, 213, 184);
+    --white-color:#fff;
+    --min:red;
+    --white-black:#000;
+    --text-color:#333;/* màu chữ */
+    --border-color:#dbdbdb;
+    --navbar-height:34px;
+    --header-height:120px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height));
+    --star-gold-color:#ffce3e;
+    }

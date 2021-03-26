@@ -20,7 +20,7 @@
                      </a> 
                      <div class="card-body">
                         <h5 class="card-title">
-                           <a href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $cbt['id_product']?>">
+                           <a class="cart__text" href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $cbt['id_product']?>">
                            <?php echo $cbt['title_product']?>
                            </a>
                         </h5>

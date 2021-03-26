@@ -21,7 +21,7 @@
                   </a> 
                   <div class="card-body">
                     <h5 class="card-title">
-                    <a href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $pro['id_product']?>">
+                    <a class="cart__text" href="http://localhost:81/mywebsite/categoryproduct/product_detail/<?php echo $pro['id_product']?>">
                           <?php echo $pro['title_product']?>
                     </a></h5>
                     <p class="card-text"><?php echo number_format($pro['price_product'],0,',','.')?>vnđ</p>

@@ -80,22 +80,25 @@ img.nav__logo{
     margin-bottom: 30px;
     overflow: hidden;/* nếu như vượt quá kích thước sẽ tự ẩn đi */
 }
+.text-warning{
+    color: rgba(250, 210, 90, 0.918) !important;
+}
 /* end show product */  
 .nav__search {
     margin-left: -25px;
-    width: 238px !important;
+    width: 270px !important;
 }
 .mr-4{
     margin-left: 0px;
 }
 /* footer */
-
+.bg-secondary {
+    background-color: rgb(208, 188, 129)!important;
+}
 .footer__list{
-    background-color: rgb(214, 208, 208);
+    background-color: rgb(227, 213, 184);
 }
-.page-footer{
-    /* float: left; */
-}
+
 .footer-text{
     font-size: 26px;
 }
@@ -139,13 +142,19 @@ img.nav__logo{
     height: 46px;
     
 }
+.btn-primary {
+    color:var(--text-color);
+    background-color: rgb(182, 182, 158);
+}
 .customer__name-span{
     color: red;
     margin-right: 4px;
 
 }
-.customer__btn{
+.customer__btn {
     margin: 20px 0 0 40px;
+    height: 30px;
+    width: 100px;
 }
 .relate__product{
  display: block;
@@ -166,6 +175,12 @@ img.nav__logo{
 .card-title{
     font-size: 0.9rem;
 }
+li-warning{
+    color:rgb(228, 167, 37) !important;
+}
+.display-4{
+    font-size: 2.5rem;
+}
 .wapper{
     list-style: none;
     text-decoration: none;
@@ -175,7 +190,7 @@ img.nav__logo{
 .hiring-box {
     font-size: 14px;
     line-height: 24px;
-    color: #5a6063;
+    color: var(--text-color);
     -moz-background-clip: padding-box;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
@@ -334,18 +349,26 @@ select.focus {} .box_contact {
 input.btn-gui {
     margin: 0;
     padding: 5px 20px;
-    width: auto;
+    width: 170px;
     font-size: 14px;
     font-weight: bold;
     background: #fff;
+    height: 32px;
     color: #333;
     text-transform: uppercase;
     border: 1px solid #333;
 }
 .btn-outline-success {
-    margin-left: -42px;
+    margin-left: -36px;
     background-color: transparent;
+    width: 30px;
     background-image: none;
+    
+}
+.btn{
+    padding: 0 !important;
+    border-color: ivory;
+    border:none;
     
 }
 .bdnone {
@@ -377,3 +400,8 @@ input.btn-gui {
 .nav-item-left {
     padding-top: 1px !important;
 }
+/*start css tổng thể */
+.cart__text{
+    color: var(--text-color);
+}
+/* end css tổng thể   */
