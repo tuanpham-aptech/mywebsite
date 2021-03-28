@@ -28,12 +28,12 @@ Class customermodel extends DModel{
     }
     public function updatecustomer($table_categories,$data,$cond){      
         return $this->db->update($table_categories,$data,$cond);
-     }
+    }
 
-     public function deletecustomer($table_categories,$cond){
+    public function deletecustomer($table_categories,$cond){
         return $this->db->delete($table_categories,$cond);
-     }
-     public function login($table_customer,$username,$password){
+    }
+    public function login($table_customer,$username,$password){
         $sql = "SELECT *FROM $table_customer WHERE customer_email = ? AND customer_password = ?";
         return $this->db->affectedRows($sql,$username,$password);
     }
@@ -51,7 +51,7 @@ Class customermodel extends DModel{
     // }
     public function getIdCustomerComment($table_comment,$key){
         $sql = "SELECT  customer_id FROM $table_comment WHERE customer_id = '$key' ";
-        return $this->db->select($sql);
+        return $this->db->selectOne($sql);
     }
     
 

@@ -92,10 +92,14 @@
                                     </div>
                                     </td>
                                  </tr>
+                                 <!-- <tr>
+                                    <td>--Màu sắc--</td>
+                                    <td>--Màu sắc--</td>
+                                 </tr> -->
                               </tbody>
                            </table>
                         </div>
-                        <a class="home-product--btn btn btn-success btn-sm" >
+                        <a class="home-product--btn product-group-btn btn btn-success btn-sm" >
                         <input style="box-shadow: none;" type="submit" name="addcart" id="addcart" value="Đặt hàng">
                         </a>
                      </div>

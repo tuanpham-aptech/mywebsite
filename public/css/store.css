@@ -54,6 +54,9 @@ img.nav__logo{
     /* list-style: none; */
     background-color: #f5f5f5;
 }
+.dropdown-content--list>a:hover{
+ background-color:rgb(227, 213, 184);
+}
 .dropdown:hover .dropdown-content{
     display: block;
 }
@@ -73,6 +76,10 @@ img.nav__logo{
 }
 .product-group-btn{
     margin-top: 10px;
+    
+}
+.product-group-btn>input{
+    cursor: pointer;
 }
 .card-product{
     width: 243px;
@@ -359,17 +366,23 @@ input.btn-gui {
     border: 1px solid #333;
 }
 .btn-outline-success {
-    margin-left: -36px;
-    background-color: transparent;
-    width: 30px;
+    margin-left: -41px;
+    background-color: rgb(227, 213, 184);
+    width: 35px;
+    height: 35px;
     background-image: none;
-    
 }
 .btn{
     padding: 0 !important;
     border-color: ivory;
     border:none;
     
+}
+.btn-success{
+    background-color: rgb(182, 182, 158) !important;
+}
+.btn-success:hover{
+    background-color: rgb(0, 105, 217);
 }
 .bdnone {
     border: none;

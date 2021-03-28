@@ -16,6 +16,16 @@ Class Database extends PDO{
        return  $stmt->fetchAll($fetchStyle);// trả về kết quả 
 
     }
+    public function selectOne($sql, $data = array(),$fetchStyle = PDO::FETCH_COLUMN){
+        $stmt = $this->prepare($sql);// kiểm tra câu lệnh  
+        foreach($data as $key =>$value){
+
+        $stmt->bindParam($key,$value);// de so sanh bao nhieu doi tuong can truyen vao dem di so sanh 
+        }
+        $stmt->execute();// thực hiện câu lệnh 
+       return  $stmt->fetchColumn($fetchStyle);// trả về kết quả 
+
+    }
 
     public function insert($table,$data){
         $keys = implode(",",array_keys($data));// thêm kí tự dấu ,

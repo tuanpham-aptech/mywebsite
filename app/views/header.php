@@ -26,7 +26,7 @@
                      <a class="cart__text nav-link nav-item-left " id="navbarDropdown" >
                      Danh mục sản phẩm
                      </a>
-                     <div class="dropdown-content" aria-labelledby="navbarDropdown">
+                     <div class="dropdown-content dropdown-content--list" aria-labelledby="navbarDropdown">
                         <?php foreach($category as $key =>$value){?>
                         <a class="cart__text dropdown-item" href="<?php echo BASE_URL?>categoryproduct/category_product/<?php echo $value['id']?>">
                         <?php echo $value['name']?>
@@ -38,7 +38,7 @@
                      <a class="nav-link nav-item-left " id="navbarDropdown" >
                      Thương hiệu
                      </a>
-                     <div class="dropdown-content" aria-labelledby="navbarDropdown">
+                     <div class="dropdown-content dropdown-content--list" aria-labelledby="navbarDropdown">
                         <?php foreach($brand as $key =>$br){?>
                         <a class="cart__text dropdown-item" href="<?php echo BASE_URL?>brand/brand_product/<?php echo $br['id_brand']?>">
                         <?php echo $br['title_brand']?>
