@@ -44,7 +44,6 @@ Class customer extends DController{
             'customer_email'=>$email,
             'customer_password'=>md5($password),
             'customer_address'=>$address,
-
         );
         
         if($count < 1){

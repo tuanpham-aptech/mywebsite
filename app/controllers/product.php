@@ -126,10 +126,10 @@ Class product extends DController{
 
         $result = $categorymodel->insertproduct($table,$data);
         if($result == 1 ){  
-            $message['msg'] = "Thêm danh mục sản phẩm thành công  ";
+            $message['msg'] = "Thêm  sản phẩm thành công  ";
             header('Location:'.BASE_URL."/product/add_product?msg=".urlencode(serialize($message)));
         }else{
-            $message['msg'] = "Thêm danh mục sản phẩm thất bại ";
+            $message['msg'] = "Thêm sản phẩm thất bại ";
             header('Location:'.BASE_URL."/product/add_product?msg=".urlencode(serialize($message)));
         }
     }
@@ -140,10 +140,10 @@ Class product extends DController{
         $categorymodel = $this->load->model('categorymodel');
         $result = $categorymodel->delete_product($table,$cond);
         if($result == 1 ){
-            $message['msg'] = "Xóa danh mục thành công  ";
+            $message['msg'] = "Xóa sản phẩm thành công  ";
             header("Location:".BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
         }else{
-            $message['msg'] = "Xóa danh mục thất bại ";
+            $message['msg'] = "Xóa sản phẩm  thất bại ";
             header("Location:".BASE_URL."/product/list_product?msg=".urlencode(serialize($message)));
         }
 

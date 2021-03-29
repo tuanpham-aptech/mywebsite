@@ -51,7 +51,6 @@
                   </div>
                   <div class="clear"></div>
                </div>
-            
                <div class="row btnclass">
                   <div class="contact__properties-input ipmaxn mb-2 ">
                      <input type="submit" class="btn-gui btn btn-success" name="register" id="frmSubmit" 
@@ -82,5 +81,4 @@
          </form>
       </div>
    </div>
-</div>
 </div>

@@ -22,10 +22,11 @@ Class login extends DController{
         if(Session::get("login")==true){
             header("Location:".BASE_URL."login/dashboard");
         }
+        $this->load->view('admin/header');
         $this->load->view('admin/login');
-        $this->load->view('footer');
+        $this->load->view('admin/footer');
     }
-    public function authentication_login(){
+    public function authentication_login(){// xac thuc dang nhap
          $username = $_POST['username'];
          $password = md5($_POST['password']);
          $table_admin = 'admin';
@@ -38,7 +39,7 @@ Class login extends DController{
         }else{
            $result = $loginmodel->getLogin($table_admin,$username,$password);
            //gọi Session ra 
-           Session::init();
+           Session::init();// khởi tạo session
            Session::set('login',true);// kiểm tra xem người dùng đã đăng nhập chưa 
            Session::set('username',$result[0]['username']);// trong đó username là key còn $result[0]['username'] là value
            Session::set('userid',$result[0]['userid']);// trong đó userid là key còn $result[0]['userid'] là value

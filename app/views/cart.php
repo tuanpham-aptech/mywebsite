@@ -48,7 +48,7 @@
                   </thead>
                   <tbody>
                      <?php if(isset($_SESSION['shopping_cart'])){ ?>
-                     <form method="POST" autocomplete ="off" action="<?php echo BASE_URL?>ordercartuser/updatecart   ">
+                     <form method="POST" autocomplete ="off" action="<?php echo BASE_URL?>ordercartuser/updatecart">
                         <?php
                            $total = 0;
                             foreach($_SESSION['shopping_cart'] as $key =>$value){

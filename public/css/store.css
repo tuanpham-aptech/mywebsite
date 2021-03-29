@@ -153,6 +153,13 @@ img.nav__logo{
     color:var(--text-color);
     background-color: rgb(182, 182, 158);
 }
+.btn-warning {
+    width: 64px !important;
+    height: 26px !important;
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
 .customer__name-span{
     color: red;
     margin-right: 4px;

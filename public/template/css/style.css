@@ -10,3 +10,28 @@ h3.list_category{
     background-color: red;
     text-align: center;
 }
+/* footer */
+.bg-secondary {
+    background-color: rgb(208, 188, 129)!important;
+}
+.footer__list{
+    background-color: rgb(227, 213, 184);
+}
+
+.footer-text{
+    font-size: 26px;
+}
+.message{
+    display: block;
+}
+.google-map iframe{
+    margin-top: 10px;
+    max-width: 340px;
+    max-height: 400px;
+}
+.bg-navbar{
+    background-color: rgb(207, 164, 76) !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1.5);
+}

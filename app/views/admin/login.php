@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL?>public/template/css/style.css">
     <title>Login admin</title>
     <style type="text/css">
 
@@ -123,7 +123,7 @@
 <body>
     <div id="logreg-forms">
         <form class="form-signin" autocomplete="off" action="<?php echo BASE_URL?>login/authentication_login" method ="POST">
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Đăng nhập</h1>
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Login</h1>
             <input type="text" id="inputEmail" name ="username" class="form-control" placeholder="User name" required="1" autofocus="">
             <input type="password" id="inputPassword" name ="password" class="form-control mt-4" placeholder="Password" required="1">
             

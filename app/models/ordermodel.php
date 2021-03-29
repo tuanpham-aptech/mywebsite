@@ -7,7 +7,7 @@ Class ordermodel extends DModel{
    }
    public function insert_order($table_order,$data_order){
     return $this->db->insert($table_order,$data_order);
-}
+   }
    public function insert_order_detail($table_order_details,$data){
     return $this->db->insert($table_order_details,$data); 
    }

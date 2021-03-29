@@ -51,7 +51,7 @@ Class ordercartuser extends DController{
 			);
 			$result_order = $ordermodel->insert_order($table_order,$data_order);
 
-        if(Session::get("shopping_cart") == true){
+        if(Session::get("shopping_cart") == true){// nếu tồn tại session shopping cart 
            foreach(Session::get("shopping_cart") as $key =>$value){
              $data = array(
                 'order_code' =>$order_code,
@@ -77,7 +77,7 @@ Class ordercartuser extends DController{
 
     public function addtocart(){
         Session::init();
-        if(isset($_SESSION['shopping_cart'])){
+        if(isset($_SESSION['shopping_cart'])){// nếu tồn tại session shopping_cart
             $valiable = 0;
             foreach($_SESSION['shopping_cart'] as $key =>$value){
                 if($_SESSION['shopping_cart'][$key]['product_id'] == $_POST['product_id']){
@@ -103,7 +103,7 @@ Class ordercartuser extends DController{
                 'product_quantity' => $_POST['product_quantity'],
                 'product_price' => $_POST['product_price']
             );
-            $_SESSION['shopping_cart'][] = $item; // nếu chưa tồn tại  tạo ra một mảng 
+            $_SESSION['shopping_cart'][] = $item; // nếu chưa tồn tại tạo mảng  session shopping cart
         }
         header("Location:".BASE_URL.'/ordercartuser');
 

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-navbar navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="<?php echo BASE_URL?>/login/dashboard">Admin panel</a>
 
