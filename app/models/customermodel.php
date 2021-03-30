@@ -8,7 +8,7 @@ Class customermodel extends DModel{
 
     }
     public function customer($table_customer){
-        $sql = "SELECT *FROM $table_customer ORDER BY id DESC";
+        $sql = "SELECT *FROM $table_customer ORDER BY customer_id DESC";
         return $this->db->select($sql);
      }
     public function customerbyid($table,$cond){
@@ -16,22 +16,20 @@ Class customermodel extends DModel{
        return $this->db->select($sql); 
     }
 
-    public function insertcustomer($table_categories,$data){
-
-        return $this->db->insert($table_categories,$data);  
-     }
-    
+    public function insertcustomer($table_customer,$data){
+        return $this->db->insert($table_customer,$data);  
+     }    
      // hàm mới 
      public function countUser($table_customer,$email){
          $sql = "SELECT *FROM $table_customer WHERE customer_email = ?";
         return $this->db->countRegister($sql,$email);
     }
-    public function updatecustomer($table_categories,$data,$cond){      
-        return $this->db->update($table_categories,$data,$cond);
+    public function updatecustomer($table_customer,$data,$cond){      
+        return $this->db->update($table_customer,$data,$cond);
     }
 
-    public function deletecustomer($table_categories,$cond){
-        return $this->db->delete($table_categories,$cond);
+    public function deletecustomer($table,$cond){
+        return $this->db->delete($table,$cond);
     }
     public function login($table_customer,$username,$password){
         $sql = "SELECT *FROM $table_customer WHERE customer_email = ? AND customer_password = ?";

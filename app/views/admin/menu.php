@@ -1,12 +1,10 @@
 <nav class="navbar navbar-expand-sm bg-navbar navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="<?php echo BASE_URL?>/login/dashboard">Admin panel</a>
+  <a class="navbar-brand" href="<?php echo BASE_URL?>/login/dashboard">Admin</a>
 
   <!-- Links -->
   <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="<?php echo BASE_URL?>/login/dashboard">Trang chủ </a>
-    </li>
+  
      <!-- Danh mục bài viết -->
      <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -64,6 +62,14 @@
       </a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<?php echo BASE_URL?>/order">Liệt kê</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Thành viên
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="<?php echo BASE_URL?>customer/list_customer">Liệt kê</a>
       </div>
     </li>
     <li class="nav-item">

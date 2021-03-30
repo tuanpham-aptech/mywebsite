@@ -60,6 +60,77 @@ Class customer extends DController{
             header('Location:'.BASE_URL."/customer/customer_login?msg=".urlencode(serialize($message)));
         }
     }
+    //admin customer managument
+    public function list_customer(){
+        $this->load->view('admin/header');
+        $this->load->view('admin/menu');
+        $table_customer = 'customers';
+        $customermodel = $this->load->model('customermodel');
+        $data['customer'] = $customermodel->customer($table_customer);
+        $this->load->view('admin/customer/list_customer',$data); 
+        $this->load->view('admin/footer');
+
+    }
+    public function delete_customer($id){
+        $table = 'customers';
+        $cond = "customer_id = '$id'";
+        $customermodel = $this->load->model('customermodel');
+        $result = $customermodel->deletecustomer($table,$cond); 
+        if($result == 1 ){
+            $message['msg'] = "Xóa thành viên thành công  ";
+            header("Location:".BASE_URL."customer/list_customer?msg=".urlencode(serialize($message)));
+        }else{
+            $message['msg'] = "Xóa thành viên thất bại ";
+            header("Location:".BASE_URL."customer/list_customer?msg=".urlencode(serialize($message)));
+        }
+
+    }
+    public function edit_customer($id){
+        $table = 'customers';
+        $cond = "customer_id = '$id'";
+        $customermodel = $this->load->model('customermodel');
+        $data['customerbyid'] = $customermodel->customerbyid($table,$cond);
+        $this->load->view('admin/header');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/customer/edit_customer',$data);
+        $this->load->view('admin/footer');
+    }
+    public function update_customer($id){
+        $cond ="customer_id = '$id'";
+        $table_customer = 'customers';
+        $name = $_POST['customer_name'];
+        $email = $_POST['customer_email'];
+        $phone = $_POST['customer_phone'];
+        $password = $_POST['customer_password'];
+        $address = $_POST['customer_address'];
+        $customermodel =  $this->load->model('customermodel');
+        $count = $customermodel->countUser($table_customer,$email);
+        $data = array(
+            'customer_name'=>$name,
+            'customer_phone'=>$phone,
+            'customer_email'=>$email,
+            'customer_password'=>md5($password),
+            'customer_address'=>$address,
+        );
+        // echo $name;
+        // die;
+        
+        if($count < 1){
+            $result = $customermodel->updatecustomer($table_customer,$data,$cond); 
+        }
+        else{
+            echo "Email đã tồn tại mời nhập email khác ";
+        }
+       
+        if($result == 1 ){  
+            $message['msg'] = "Cập nhật thông tin thành công  ";
+            header('Location:'.BASE_URL.'?msg='.urlencode(serialize($message)));
+        }else{
+            $message['msg'] = "Cập nhật thông tin thất bại  ";
+            header("Location:".BASE_URL."customer/list_customer?msg=".urlencode(serialize($message)));
+        }
+
+    }
     public function customer_login_user(){// D N N user login_customer
         $username = $_POST['username'];
         $password = md5($_POST['password']);
