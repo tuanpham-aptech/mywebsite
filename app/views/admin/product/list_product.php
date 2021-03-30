@@ -7,7 +7,7 @@ if(!empty($_GET['msg'])){
     }
 }
 ?>
-<h3 class = "list_category">Liệt kê danh mục sản phẩm </h3>
+<h3 class = "list_category">Liệt kê sản phẩm </h3>
 <table class="table">
   <thead>
     <tr>
